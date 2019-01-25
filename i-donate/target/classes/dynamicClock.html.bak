@@ -1,0 +1,20 @@
+<html ng-app="clockApp">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dynamic Clock using Angular</title>
+<script type="text/javascript" src='angular.js'></script>
+<script type="text/javascript" src='app.js'></script>
+
+</head>
+<body>
+<h1> Clock App</h1>
+<div ng-controller="ClockCntrl">
+UserName <input type="text" ng-model="userName"></input>  <!--  ng model binds the input to scope objects userName property declared in app.js -->
+<h1> Current time is : {{currentTime}}</h1>
+<button ng-click="updateTime()">Update Time</button>
+<p>Username is : {{userName}}</p>
+
+</div>
+
+</body>
+</html>

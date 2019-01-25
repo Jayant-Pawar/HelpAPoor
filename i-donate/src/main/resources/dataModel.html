@@ -1,0 +1,30 @@
+<html ng-app="dataModelApp">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Dynamic Clock using Angular</title>
+		<script type="text/javascript" src='angular.js'></script>
+		<script type="text/javascript" src='dataModel.js'></script>
+
+	</head>
+	<body>
+		<h1> Datamodel App</h1>
+		<div ng-controller="dataModelCtrl">
+		<p>UserName : <input type="text" ng-change="textBoxChange()"ng-model="textString"> </input> </p>
+		<p>Remember on this computer : <input type="checkbox" ng-model="booleanValue"> </input></p>
+		<p>Date :<input type="Date" ng-model="dateInput">
+		<p>Radio Button : <input type="Radio" ng-model="radioValue" value="opt1">Option 1</input> 
+						  <input type="Radio" ng-model="radioValue" value="opt2">Option 2</input> 
+						  <input type="Radio" ng-model="radioValue" value="opt3">Option 3</input> 
+		</p>
+
+		<div>
+			<p>Username is : {{textString}}</p>
+			<p>Checkbox value is : {{booleanValue}}</p>
+			<p>Date value is : {{dateInput}}</p>
+			<p>Radio value is : {{radioValue}}</p>
+		</div>
+
+	</div>
+
+</body>
+</html>

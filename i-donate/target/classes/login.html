@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>i-donate Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img src="./images/helpinghands.jpg" width="500" height="150" alt="Logo"  align="middle">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">Media heading</h4>
+    </div>
+
+  </div>
+    <form th:action="@{/login}" method="post">
+      <div style="float:right;" class="form-group" align="right">
+        <label for="uname"><b>Username</b></label>
+        <div class="input-group col-md-10">
+            <input type="text" placeholder="Enter Username" name="uname" required>
+        </div>
+        <div>
+          <label for="psw"><b>Password    </b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required> <br>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label><br>
+        </div>
+        <div>
+            <button type="submit">Login</button><br>
+        </div>
+
+    </div>
+    </form>
+</body>
+
+</html>

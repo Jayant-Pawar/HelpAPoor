@@ -1,0 +1,33 @@
+<html ng-app="clockApp">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Dynamic Clock using Angular</title>
+		<script type="text/javascript" src='angular.js'></script>
+		<script type="text/javascript" src='app.js'></script>
+
+	</head>
+	<body>
+		<h1> Clock App</h1>
+		<div ng-controller="ClockCntrl as cntrl">
+		UserName <input type="text" ng-model="cntrl.userName"></input>  <!--  ng model binds the input to scope objects userName property declared in app.js -->
+		<h1> Current time is : {{cntrl.currentTime}}</h1>
+		<button ng-click="updateTime()">Update Time</button>
+		<p>Username is : {{cntrl.userName}}</p>
+
+		<p ng-repeat="i in cntrl.list">Hello</p> <!-- whichever tag has ng-repeat, every child of it will be repeated -->
+		<div ng-repeat="i in cntrl.list">
+			<p>Value of I is : {{i}}</p>
+			<p>Element index : {{$index}}</p> <!-- angular creates scope per ng-repeat meaning one scope per iteration, hence adding few inbuilt variables -->
+			<p>Element ismiddle : {{$middle}}</p>
+			<p>Element isfirst : {{$first}}</p>
+			<p>Element islast : {{$last}}</p>
+			<p>Element isodd : {{$odd}}</p>
+			<p>Element iseven : {{$even}}</p>
+		</div>
+		<div ng-repeat="i in cntrl.jsonList">
+			<p>Name of {{i}} is {{i.name}} and age is {{i.age}}</p>
+		</div>
+	</div>
+
+</body>
+</html>

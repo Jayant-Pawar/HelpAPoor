@@ -1,0 +1,30 @@
+
+<html ng-app="MyApp"> <!-- Name of the module registered so as for angular to look for controllers in this module -->
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular</title>
+<script src="./angular.js"></script>
+</head>
+<!--<body ng-init="hourOfDay=18">  Vars can be initiated this way but this isnt ideal-->
+<body>
+<div ng-controller = "MainController"> <!-- Refer the controller which is registered in angular in javascript -->
+	<h1>Hello Angular</h1>
+	<p ng-if="hourOfDay<12">Good Morning </p>
+	<p ng-if="hourOfDay>17">Good Evening </p>
+	<p>The hour of the day is :<span ng-bind=hourOfDay></span> </p>
+	<p>Another way to show The hour of the day is :{{hourOfDay}} </p>
+	</div>
+	
+	<script type="text/javascript">  // All the javascript functions need to be written inside scripts tag
+	console.log(angular); // Inbuilt global variable angular
+	var module = angular.module("MyApp",[]); // register the module MyApp for angular to refer
+	module.controller("MainController",main); // register the controller with any name and the function it refers to
+	
+	function main($scope) //Indicates angular to pass the Scope object to the method. Scope object contains all the global properties of angular.
+	{
+		$scope.hourOfDay=20; //setting a new property of hourOfDay to scope object.
+		console.log ("New Function");
+	}
+	</script>
+</body> 
+</html>
